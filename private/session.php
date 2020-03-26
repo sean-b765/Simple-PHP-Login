@@ -24,9 +24,7 @@ require('initialize.php');
         }
 
         public function login($name) {
-            echo 'session : ' . $name;
             $this->username = $_SESSION['username'] = $name;
-            //session.gc_max
             $this->is_logged_in = true;
         }
 

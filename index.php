@@ -16,11 +16,11 @@
                 $username = trim($_POST['username']);
                 $password = trim($_POST['password']);
 
-                echo $username . $password;
+                //echo $username . $password;
 
                 if (user_exists($username, $password)) {
                     $session->login($username);
-                    header('Location: ../web_prog6/public/index.php');
+                    header('Location: ../Simple-PHP-Login/public/index.php');
                 }
             }
 

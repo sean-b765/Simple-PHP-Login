@@ -1,6 +1,6 @@
 * {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1.05em;
+    font-size: 18px;
     margin: 0;
     padding: 0;
 }
@@ -89,4 +89,18 @@ ul li a {
 
 .add_user {
     margin-top: 50px;
+}
+
+.add_user_area {
+    position: absolute;
+    margin-top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.add_user_area button {
+    position: relative;
+    padding: 5px;
+    left: 50%;
+    transform: translateX(-50%);
 }

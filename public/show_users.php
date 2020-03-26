@@ -39,6 +39,7 @@
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
+                    <th>Email</th>
                 </tr>
 
                 <?php
@@ -51,6 +52,7 @@
                             echo '  <tr>
                                 <td>'. $row['id'] .'</td>
                                 <td>'. $row['username'] .'</td>
+                                <td>'. $row['email'] .'</td>
                             </tr>';
                         }
                     }
