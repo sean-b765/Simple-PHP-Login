@@ -7,16 +7,15 @@
     <body>
         <?php
 
-        require_once('../private/initialize.php');
+        require_once '../private/initialize.php';
         if ($session->is_logged_in()) {
-            
             if (isset($_POST['logout'])) {
                 // logout
                 $session->logout();
                 header('Location: ../');
             }
 
-        ?>  
+            ?>  
         <div id="userArea">
 
             <div class="logout">
@@ -43,21 +42,20 @@
                 </tr>
 
                 <?php
-
-                    $sql = "SELECT * FROM users";
+                $sql        = 'SELECT * FROM users';
                     $result = query($sql);
 
-                    if (mysqli_num_rows($result) > 0) {
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            echo '  <tr>
-                                <td>'. $row['id'] .'</td>
-                                <td>'. $row['username'] .'</td>
-                                <td>'. $row['email'] .'</td>
+                if (mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo '  <tr>
+                                <td>'.$row['id'].'</td>
+                                <td>'.$row['username'].'</td>
+                                <td>'.$row['email'].'</td>
                             </tr>';
-                        }
                     }
+                }
 
-                    
+
 
                 ?>
 
@@ -65,10 +63,12 @@
 
         </div>    
 
-        <?php 
-        // user not logged in
+            <?php
+            // user not logged in
         } else {
-            echo "Session expired. Login again.";
-        } ?>
+            echo 'Session expired. Login again.';
+        }//end if
+
+        ?>
     </body>
 </html>

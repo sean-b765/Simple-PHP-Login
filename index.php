@@ -10,19 +10,18 @@
 
         <?php
 
-            require_once('private/initialize.php');
+            require_once 'private/initialize.php';
 
-            if (isset($_POST['submit'])) {
-                $username = trim($_POST['username']);
-                $password = trim($_POST['password']);
+        if (isset($_POST['submit'])) {
+            $username = trim($_POST['username']);
+            $password = trim($_POST['password']);
 
-                //echo $username . $password;
-
-                if (user_exists($username, $password)) {
-                    $session->login($username);
-                    header('Location: ../Simple-PHP-Login/public/index.php');
-                }
+            // echo $username . $password;
+            if (user_exists($username, $password)) {
+                $session->login($username);
+                header('Location: ../Simple-PHP-Login/public/index.php');
             }
+        }
 
         ?>
 

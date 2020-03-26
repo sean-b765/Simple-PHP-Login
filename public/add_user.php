@@ -7,16 +7,15 @@
     <body>
         <?php
 
-        require_once('../private/initialize.php');
+        require_once '../private/initialize.php';
         if ($session->is_logged_in()) {
-            
             if (isset($_POST['logout'])) {
                 // logout
                 $session->logout();
                 header('Location: ../');
             }
 
-        ?>  
+            ?>  
         <div id="userArea">
 
             <div class="logout">
@@ -68,51 +67,47 @@
             </table>
         </div>    
 
-        <?php 
+            <?php
+            if (isset($_POST['add'])) {
+                $username = trim($_POST['username']);
+                $email    = trim($_POST['email']);
+                $password = trim($_POST['password']);
 
-        if (isset($_POST['add'])) {
-            $username = trim($_POST['username']);
-            $email = trim($_POST['email']);
-            $password = trim($_POST['password']);
+                $regex = '/[\w\-.]+@([\w-]+\.)+[\w\-]+[\.(com|edu|gov|info|net|com\.au)]/';
+                // regex to validate email
+                $email_regex = preg_match($regex, $email);
 
-            $regex = "/[\w\-.]+@([\w-]+\.)+[\w\-]+[\.(com|edu|gov|info|net|com\.au)]/";
-            // regex to validate email
-            $email_regex = preg_match($regex, $email);
-
-            $n_regex = "/[a-zA-Z0-9\._]/";
-            // regex for alphanumeric name with . and _
-            $name_regex = preg_match($n_regex, $username);
+                $n_regex = '/[a-zA-Z0-9\._]/';
+                // regex for alphanumeric name with . and _
+                $name_regex = preg_match($n_regex, $username);
 
 
-            $user_exists = user_exists($username, $password);
+                $user_exists = user_exists($username, $password);
 
-            // check valid email
-            if ($email_regex) {
-                // check valid name
-                if ($name_regex) {
-                    if (!$user_exists) {
-                
-                        if (insert_new_user($username, $email, $password) === TRUE) {
-                            echo 'User added!';
+                // check valid email
+                if ($email_regex) {
+                    // check valid name
+                    if ($name_regex) {
+                        if (!$user_exists) {
+                            if (insert_new_user($username, $email, $password) === true) {
+                                echo 'User added!';
+                            } else {
+                                echo 'Something went wrong';
+                            }
                         } else {
-                            echo 'Something went wrong';
+                            echo 'Username/Password combo already exists.';
                         }
-        
                     } else {
-                        echo 'Username/Password combo already exists.';
+                        echo 'Invalid name. Can only be alphanumeric and contain ( _ . )';
                     }
                 } else {
-                    echo 'Invalid name. Can only be alphanumeric and contain ( _ . )';
-                }
-                
-            } else {
-                echo 'Please enter a valid email.';
-            }
-        }
-
-        // user not logged in
+                    echo 'Please enter a valid email.';
+                }//end if
+            }//end if
         } else {
-            echo "Session expired. Login again.";
-        } ?>
+            echo 'Session expired. Login again.';
+        }//end if
+
+        ?>
     </body>
 </html>

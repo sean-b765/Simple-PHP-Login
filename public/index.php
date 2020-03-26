@@ -7,16 +7,15 @@
     <body>
         <?php
 
-        require_once('../private/initialize.php');
+        require_once '../private/initialize.php';
         if ($session->is_logged_in()) {
-            
             if (isset($_POST['submit'])) {
                 // logout
                 $session->logout();
                 header('Location: ../');
             }
 
-        ?>  
+            ?>  
         <div id="userArea">
 
             <div class="logout">
@@ -27,7 +26,7 @@
 
             </div>
 
-            <p><?php echo 'Welcome ' . $session->username;?></p>
+            <p><?php echo 'Welcome '.$session->username; ?></p>
 
             <ul>
                 <li><a href="show_users.php">Show Users</a></li>
@@ -35,10 +34,12 @@
             </ul>
         </div>    
 
-        <?php 
-        // user not logged in
+            <?php
+            // user not logged in
         } else {
-            echo "Session expired. Login again.";
-        } ?>
+            echo 'Session expired. Login again.';
+        }//end if
+
+        ?>
     </body>
 </html>

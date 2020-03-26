@@ -1,5 +1,5 @@
 * {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', tahoma, geneva, verdana, sans-serif;
     font-size: 18px;
     margin: 0;
     padding: 0;
@@ -16,7 +16,7 @@ body {
     transform: translate(-50%, -50%);
     width: 400px;
     height: 200px;
-    background:lightcoral;
+    background: lightcoral;
     color: white;
 }
 
@@ -73,7 +73,7 @@ ul li a {
     margin-top: 50px;
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translatex(-50%);
     border-collapse: collapse;
     background-color: whitesmoke;
 }
@@ -95,12 +95,12 @@ ul li a {
     position: absolute;
     margin-top: 50px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translatex(-50%);
 }
 
 .add_user_area button {
     position: relative;
     padding: 5px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translatex(-50%);
 }
