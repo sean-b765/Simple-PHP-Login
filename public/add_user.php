@@ -78,7 +78,7 @@
                 $email_regex = preg_match($regex, $email);
 
 
-                $n_regex = '/[a-zA-Z0-9\._]/';
+                $n_regex = '/^[a-zA-Z0-9\._-]{3,15}$/';
                 // regex for alphanumeric name with . and _
                 $name_regex = preg_match($n_regex, $username);
 
