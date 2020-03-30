@@ -20,6 +20,8 @@
             if (user_exists($username, $password)) {
                 $session->login($username);
                 header('Location: ../Simple-PHP-Login/public/index.php');
+            } else {
+                echo 'Incorrect username or password.';
             }
         }
 
@@ -29,7 +31,7 @@
 
             <form action="" method="POST">
 
-                User: <input type="text" name="username" id="username" />
+                User: <input type="text" name="username" id="username" /><br/>
 
                 Pass: <input type="password" name="password" id="password"/>
 

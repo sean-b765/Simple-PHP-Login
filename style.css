@@ -88,19 +88,15 @@ ul li a {
 }
 
 .add_user {
-    margin-top: 50px;
-}
-
-.add_user_area {
     position: absolute;
     margin-top: 50px;
     left: 50%;
-    transform: translatex(-50%);
+    transform: translateX(-50%);
 }
 
-.add_user_area button {
+.add_user button {
     position: relative;
     padding: 5px;
     left: 50%;
-    transform: translatex(-50%);
+    transform: translateX(-50%);
 }

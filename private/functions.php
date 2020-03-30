@@ -19,8 +19,7 @@ function insert_new_user($user, $email, $pass)
 function query($sql)
 {
     global $database;
-    $result = $database->query($sql);
-    return $result;
+    return $database->query($sql);
 
 }//end query()
 
