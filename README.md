@@ -5,4 +5,4 @@ A Simple login page with PHP session
 
 **Logged in**
 
-![Screencap of logged in page](images/Edge.png)
+![Screencap of logged in page](images/Edge.PNG)
